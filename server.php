@@ -3,35 +3,34 @@
 
 	$username = "";
 	$email    = "";
-	$errors = array(); 
-	$_SESSION['success'] = "";
+	$errors = array();
 
-	$con = mysqli_connect('localhost', 'root', '');
+	$connect = mysqli_connect('localhost', 'root', '');
 
-	$create = "CREATE DATABASE IF NOT EXISTS library";
-	mysqli_query($con, $create);
+	$ct = "CREATE DATABASE IF NOT EXISTS inventory";
+	mysqli_query($connect, $ct);
 
-    $use = "USE library";
-	mysqli_query($con, $use);
+    $use = "USE inventory";
+	mysqli_query($connect, $use);
 	
-	$tbuser = "CREATE TABLE IF NOT EXISTS tableusers (
+	$user = "CREATE TABLE IF NOT EXISTS users (
 		id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 		username VARCHAR(30) NOT NULL,
 		email VARCHAR(50),
 		password VARCHAR(50)
 		)";
-		mysqli_query($con, $tbuser);
+		mysqli_query($connect, $user);
 
-	$tbbooks = "CREATE TABLE IF NOT EXISTS tablebooks (
+	$pdts = "CREATE TABLE IF NOT EXISTS products (
 		id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 		title VARCHAR(50) NOT NULL,
 		author VARCHAR(100) NOT NULL,
 		edition INT(10),
 		adddate DATE
 		)";
-		mysqli_query($con, $tbbooks);
+		mysqli_query($connect, $pdts);
 
-	$ins = "INSERT INTO `tablebooks` (`id`, `title`, `author`, `edition`, `adddate`) VALUES
+	$products = "INSERT INTO `tablebooks` (`id`, `title`, `author`, `edition`, `adddate`) VALUES
 	(1, 'Wrong key then', 'Debuzzy skar', 1, '2020-08-11'),
 	(2, 'Guns akimbo', 'collino antony', 2, '2020-08-11'),
 	(3, 'Bob Marley', 'Ganja planter q', 1, '2020-08-11'),
@@ -41,31 +40,30 @@
 	(7, 'White Orange me', 'Donald hashhole', 1, '2020-08-11'),
 	(8, 'Blackkan Man Turn', 'collino antony', 2, '2020-08-11'),
 	(9, 'The Avenger marvel', 'roy cater troy', 3, '2020-08-11')";
-	mysqli_query($con, $ins);
+	mysqli_query($connect, $products);
 
 
-	if (isset($_POST['register'])) {
-		$username = mysqli_real_escape_string($con, $_POST['username']);
-		$email = mysqli_real_escape_string($con, $_POST['email']);
-		$pass1 = mysqli_real_escape_string($con, $_POST['password_1']);
-		$pass2 = mysqli_real_escape_string($con, $_POST['password_2']);
+	if (isset($_POST['reg_user'])) {
+		$username = mysqli_real_escape_string($connect, $_POST['username']);
+		$email = mysqli_real_escape_string($connect, $_POST['email']);
+		$pass1 = mysqli_real_escape_string($connect, $_POST['password_1']);
+		$pass2 = mysqli_real_escape_string($connect, $_POST['password_2']);
 
 		if (empty($username)) { array_push($errors, "Username is required"); }
 		if (empty($email)) { array_push($errors, "Email is required"); }
 		if (empty($pass1)) { array_push($errors, "Password is required"); }
 
 		if ($pass1 != $pass2) {
-			array_push($errors, "passwords do not match");
+			array_push($errors, "passwords don't match");
 		}
 
 		if (count($errors) == 0) {
 			$password = md5($pass1);
-			$query = "INSERT INTO tableusers (username, email, password) 
+			$query = "INSERT INTO users (username, email, password) 
 					  VALUES('$username', '$email', '$password')";
-			mysqli_query($con, $query);
+			mysqli_query($connect, $query);
 
 			$_SESSION['username'] = $username;
-			$_SESSION['success'] = "Welcome";
 			setcookie('user', $username, time() + (86400 * 1), "/");
 			header('location: index.php');
 		}
@@ -73,9 +71,9 @@
 	}
 
 
-	if (isset($_POST['login'])) {
-		$email = mysqli_real_escape_string($con, $_POST['email']);
-		$password = mysqli_real_escape_string($con, $_POST['password']);
+	if (isset($_POST['login_user'])) {
+		$email = mysqli_real_escape_string($connect, $_POST['email']);
+		$password = mysqli_real_escape_string($connect, $_POST['password']);
 
 		if (empty($email)) {
 			array_push($errors, "Email required");
@@ -86,12 +84,11 @@
 
 		if (count($errors) == 0) {
 			$password = md5($password);
-			$query = "SELECT * FROM tableusers WHERE email='$email' AND password='$password'";
-			$results = mysqli_query($con, $query);
+			$query = "SELECT * FROM users WHERE email='$email' AND password='$password'";
+			$results = mysqli_query($connect, $query);
 
 			if (mysqli_num_rows($results) == 1) {
 				$_SESSION['username'] = $username;
-				$_SESSION['success'] = "You are logged in";
 				setcookie('user', $username, time() + (86400 * 1), "/");
 				header('location: index.php');
 			}else {
@@ -100,10 +97,10 @@
 		}
 	}
 
-	if (isset($_POST['addbook'])) {
-		$title = mysqli_real_escape_string($con, $_POST['title']);
-		$author = mysqli_real_escape_string($con, $_POST['author']);
-		$edition = mysqli_real_escape_string($con, $_POST['edition']);
+	if (isset($_POST['product_add'])) {
+		$title = mysqli_real_escape_string($connect, $_POST['title']);
+		$author = mysqli_real_escape_string($connect, $_POST['author']);
+		$edition = mysqli_real_escape_string($connect, $_POST['edition']);
 
 		if (empty($title)) {
 			array_push($errors, "Title required");
@@ -116,17 +113,17 @@
 		}
 
 		if (count($errors) == 0) {
-			$query = "INSERT INTO tablebooks (title, author, edition, adddate ) 
+			$query = "INSERT INTO products (title, author, edition, adddate ) 
 					  VALUES('$title','$author', '$edition', NOW())";
-			mysqli_query($con, $query);
+			mysqli_query($connect, $query);
 
 			$_SESSION['added'] = "added successfuly";
 			header('location: allbooks.php');
 		}
 	}
 
-	$querrybooks = "SELECT * FROM tablebooks";
-	$result = $con->query($querrybooks);
+	$querrybooks = "SELECT * FROM products";
+	$result = $connect->query($querrybooks);
 	if ($result->num_rows > 0) {
 	  
 	} else {
@@ -134,10 +131,10 @@
 	}
 
 
-		if (isset($_POST['editbook'])) {
-			$oldauthor = mysqli_real_escape_string($con, $_POST['author']);
-			$newauthor = mysqli_real_escape_string($con, $_POST['new']);
-			$id = mysqli_real_escape_string($con, $_POST['id']);
+		if (isset($_POST['update_product'])) {
+			$oldauthor = mysqli_real_escape_string($connect, $_POST['author']);
+			$newauthor = mysqli_real_escape_string($connect, $_POST['new']);
+			$id = mysqli_real_escape_string($connect, $_POST['id']);
 	
 			if (empty($id)) { array_push($errors, "ID required"); }
 	
@@ -147,26 +144,26 @@
 			
 	
 			if (count($errors) == 0) {
-				$query = "UPDATE tablebooks SET author='$newauthor' WHERE id='$id'";
-				mysqli_query($con, $query);
+				$query = "UPDATE products SET author='$newauthor' WHERE id='$id'";
+				mysqli_query($connect, $query);
 	
-				header('location: allbooks.php');
+				header('location: allproducts.php');
 			}
 		
 		}
 
 
-		if (isset($_POST['deletebook'])) {
-			$id = mysqli_real_escape_string($con, $_POST['id']);
+		if (isset($_POST['del_product'])) {
+			$id = mysqli_real_escape_string($connect, $_POST['id']);
 	
-			if (empty($id)) { array_push($errors, "ID required"); }
+			if (empty($id)) { array_push($errors, "Product ID required"); }
 		
 	
 			if (count($errors) == 0) {
-				$query = "DELETE FROM tablebooks WHERE id='$id'";
+				$query = "DELETE FROM products WHERE id='$id'";
 				mysqli_query($con, $query);
 	
-				header('location: allbooks.php');
+				header('location: allproducts.php');
 			}
 		
 		}
