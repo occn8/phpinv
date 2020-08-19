@@ -30,7 +30,7 @@
 		)";
 		mysqli_query($connect, $pdts);
 
-	$products = "INSERT INTO `tablebooks` (`id`, `title`, `author`, `edition`, `adddate`) VALUES
+	$products = "INSERT INTO `products` (`id`, `title`, `author`, `edition`, `adddate`) VALUES
 	(1, 'Wrong key then', 'Debuzzy skar', 1, '2020-08-11'),
 	(2, 'Guns akimbo', 'collino antony', 2, '2020-08-11'),
 	(3, 'Bob Marley', 'Ganja planter q', 1, '2020-08-11'),
