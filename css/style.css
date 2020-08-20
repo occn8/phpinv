@@ -24,8 +24,11 @@ ul {
   padding: 0px;
 }
 
+.primary{
+  color: #59b8b2 !important;
+}
 .navbar .navbar-brand {
-  color: white;
+  color: black;
   font-size: 24px;
   font-weight: 600;
   padding: 0px;
@@ -36,24 +39,37 @@ ul {
 .navbar .navbar-nav>.active>a,
 .navbar .navbar-nav>.active>a:focus,
 .navbar .navbar-nav>.active>a:hover {
- 
-  color: rgb(255, 230, 0) !important;
+  color: #59b8b2 !important;
   background-color: transparent;
 }
 .navbar .navbar-nav>li>a {
   font-family: 'Mont' !important;
-  font-size: 12px; text-shadow: 2px 2px #000000;
+  font-size: 12px; 
   font-weight: 700;
-  color: whitesmoke !important;
+  color: dimgray !important;
   padding: 10px 20px;
   text-transform: uppercase;
   background-color: transparent;
 }  
-.navbar .navbar-nav>li>a:active {
-  color: rgb(255, 230, 0) !important;
-}
+
 .navbar .navbar-nav>li>a:hover,
-.navbar .navbar-nav>li>a:focus {
-  color: rgb(255, 230, 0) !important;
+.navbar .navbar-nav>li>a:focus,
+.navbar .navbar-nav>li>a:active {
+  color: #59b8b2 !important;
 }
 
+.fir-l{
+  color:  #59b8b2;
+  font-family: 'Mont' !important;
+  font-size: 30px;
+  margin: 0px;
+  outline: none;
+  padding: 0px;
+  }
+  .scec-l{
+    color: black;
+    font-size: 30px;
+    margin: 0px;
+    outline: none;
+    padding: 0px;
+    }
