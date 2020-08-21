@@ -43,29 +43,30 @@
 
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
         <h1 class="display-4">Your Inventory</h1>
-        <p class="lead">Quickly build an effective pricing table for your potential customers with this Bootstrap
-            example. It’s built with default Bootstrap components and utilities with little customization.</p>
+        <p class="lead">The varous Prouducts are stored in differents stores within warehoues. 
+            Each product is ID`ed, Batched then stored .</p>
     </div>
 
-    <div>
+    <div class="container">
+    <table id="t01">
         <tr>
             <th>
-                <h1>Pdt-Id</h1>
+                <h2>Pdt_Id</h2>
             </th>
             <th>
-                <h1>Pdt-Name</h1>
+                <h2>Pdt_Name</h2>
             </th>
             <th>
-                <h1>Description</h1>
+                <h2>Description</h2>
             </th>
             <th>
-                <h1>Batch-No</h1>
+                <h2>Batch_No</h2>
             </th>
             <th>
-                <h1>Store</h1>
+                <h2>Store</h2>
             </th>
             <th>
-                <h1>Insert-date</h1>
+                <h2>Insert_date</h2>
             </th>
         </tr>
         <?php include('configurations.php') ?>
@@ -79,6 +80,7 @@
             <td><?php echo $inventory['insertdate']; ?></td>
         </tr>
         <?php endforeach; ?>
+        </table>
     </div>
 
     <div class="container">
