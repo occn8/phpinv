@@ -4,7 +4,6 @@
 	$username = "";
 	$email    = "";
 	$errors = array();
-
 	$connect = mysqli_connect('localhost', 'root', '');
 
 	$ct = "CREATE DATABASE IF NOT EXISTS inventory";
@@ -25,21 +24,21 @@
 		id INT(5) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 		pdtname VARCHAR(50) NOT NULL,
 		pdtdescription VARCHAR(255) NOT NULL,
-		pdtbarcode INT(20),
+		batchNo INT(20),
+		store VARCHAR(50) NOT NULL,
 		insertdate DATE
 		)";
 		mysqli_query($connect, $pdts);
 
-	$products = "INSERT INTO `products` (`id`, `title`, `author`, `edition`, `insertdate`) VALUES
-	(1, 'Wrong key then', 'Debuzzy skar', 1, '2020-08-11'),
-	(2, 'Guns akimbo', 'collino antony', 2, '2020-08-11'),
-	(3, 'Bob Marley', 'Ganja planter q', 1, '2020-08-11'),
-	(4, 'Steven Mohock', 'Antony grey', 2, '2020-08-11'),
-	(5, 'Stroy of that guy', 'Steven Mohock', 1, '2020-08-11'),
-	(6, 'Blackkan Man Turn', 'Picasco italio', 2, '2020-08-11'),
-	(7, 'White Orange me', 'Donald hashhole', 1, '2020-08-11'),
-	(8, 'Blackkan Man Turn', 'collino antony', 2, '2020-08-11'),
-	(9, 'The Avenger marvel', 'roy cater troy', 3, '2020-08-11')";
+	$products = "INSERT INTO `products` (`id`, `pdtname`, `pdtdescription`, `batchNo`, `store`, `insertdate`) VALUES
+	(1, 'Lawn Moree', 'Named among the Best inventory management software products', 122, 'Store-1', '2020-07-21'),
+	(2, 'Chain saw', 'Among the Best inventory management software products', 122, 'Store-1', '2020-07-21'),
+	(3, 'Vegetables', 'Best inventory management software products', 122, 'Store-2', '2020-07-21'),
+	(4, 'Smart Phone 5', 'Named among the Best inventory management software products', 223, 'Store-3', '2020-08-18'),
+	(5, 'Guns', 'Already the Best inventory management software products', 122, 'Store-3', '2020-08-18'),
+	(6, 'Bugatti', 'the Best inventory management software products', 223, 'Store-3', '2020-08-20'),
+	(7, 'pane knife', 'Best inventory management software products', 455, 'Store-4', '2020-08-20'),
+	(8, 'Book 60one', 'Among the Best inventory management software products', 445, 'Store-4', '2020-08-20')";
 	mysqli_query($connect, $products);
 
 
@@ -48,23 +47,17 @@
 		$email = mysqli_real_escape_string($connect, $_POST['email']);
 		$pass1 = mysqli_real_escape_string($connect, $_POST['password_1']);
 		$pass2 = mysqli_real_escape_string($connect, $_POST['password_2']);
-
-		if (empty($username)) { array_push($errors, "Username is required"); }
-		if (empty($email)) { array_push($errors, "Email is required"); }
-		if (empty($pass1)) { array_push($errors, "Password is required"); }
-
-		if ($pass1 != $pass2) {
-			array_push($errors, "passwords don't match");
-		}
-
+		if (empty($username)) { array_push($errors, "Username is Required"); }
+		if (empty($email)) { array_push($errors, "Email is Required"); }
+		if (empty($pass1)) { array_push($errors, "Password is Required"); }
+		if ($pass1 != $pass2) {array_push($errors, "Passwords Don't match");}
 		if (count($errors) == 0) {
 			$password = md5($pass1);
 			$query = "INSERT INTO users (username, email, password) 
 					  VALUES('$username', '$email', '$password')";
 			mysqli_query($connect, $query);
-
 			$_SESSION['username'] = $username;
-			setcookie('user', $username, time() + (86400 * 1), "/");
+			setcookie('user', $username, time() + (86400 * 2), "/");
 			header('location: index.php');
 		}
 
@@ -74,51 +67,33 @@
 	if (isset($_POST['login_user'])) {
 		$email = mysqli_real_escape_string($connect, $_POST['email']);
 		$password = mysqli_real_escape_string($connect, $_POST['password']);
-
-		if (empty($email)) {
-			array_push($errors, "Email required");
-		}
-		if (empty($password)) {
-			array_push($errors, "Password required");
-		}
-
+		if (empty($email)) {array_push($errors, "Email Required");}
+		if (empty($password)) {array_push($errors, "Password Required");}
 		if (count($errors) == 0) {
 			$password = md5($password);
 			$query = "SELECT * FROM users WHERE email='$email' AND password='$password'";
 			$results = mysqli_query($connect, $query);
-
 			if (mysqli_num_rows($results) == 1) {
 				$_SESSION['username'] = $username;
-				setcookie('user', $username, time() + (86400 * 1), "/");
+				setcookie('user', $username, time() + (86400 * 2), "/");
 				header('location: index.php');
-			}else {
-				array_push($errors, "Incorrect combination");
-			}
+			}else {array_push($errors, "Incorrect combination");}
 		}
 	}
 
-	if (isset($_POST['product_add'])) {
-		$title = mysqli_real_escape_string($connect, $_POST['title']);
-		$author = mysqli_real_escape_string($connect, $_POST['author']);
-		$edition = mysqli_real_escape_string($connect, $_POST['edition']);
-
-		if (empty($title)) {
-			array_push($errors, "Title required");
-		}
-		if (empty($author)) {
-			array_push($errors, "Author required");
-		}
-		if (empty($edition)) {
-			array_push($errors, "Edition required");
-		}
-
+	if (isset($_POST['invent_add'])) {
+		$pdtname = mysqli_real_escape_string($connect, $_POST['pdtname']);
+		$pdtdescription = mysqli_real_escape_string($connect, $_POST['pdtdescription']);
+		$batchNo = mysqli_real_escape_string($connect, $_POST['batchNo']);
+		$store = mysqli_real_escape_string($connect, $_POST['store']);
+		if (empty($pdtname)) {array_push($errors, "Name required");}
+		if (empty($pdtdescription)) {array_push($errors, "Description Required");}
+		if (empty($store)) {array_push($errors, "Store Required");}
 		if (count($errors) == 0) {
-			$query = "INSERT INTO products (title, author, edition, insertdate ) 
-					  VALUES('$title','$author', '$edition', NOW())";
+			$query = "INSERT INTO products (pdtname, pdtdescription, batchNo, store, insertdate ) 
+					  VALUES('$pdtname','$pdtdescription', '$batchNo', '$store', NOW())";
 			mysqli_query($connect, $query);
-
-			$_SESSION['added'] = "added successfuly";
-			header('location: allbooks.php');
+			header('location: inventory.php');
 		}
 	}
 
@@ -128,41 +103,28 @@
 	} else {}
 
 
-		if (isset($_POST['update_product'])) {
-			$oldauthor = mysqli_real_escape_string($connect, $_POST['author']);
-			$newauthor = mysqli_real_escape_string($connect, $_POST['new']);
-			$id = mysqli_real_escape_string($connect, $_POST['id']);
-	
-			if (empty($id)) { array_push($errors, "ID required"); }
-	
-			if (empty($oldauthor)) { array_push($errors, "Old Author required!"); }
-			
-			if (empty($newauthor)) { array_push($errors, "Author required!"); }
-			
-	
-			if (count($errors) == 0) {
-				$query = "UPDATE products SET author='$newauthor' WHERE id='$id'";
-				mysqli_query($connect, $query);
-	
-				header('location: allproducts.php');
-			}
-		
+	if (isset($_POST['invent_update'])) {
+		$oldstore = mysqli_real_escape_string($connect, $_POST['currentstore']);
+		$newstore = mysqli_real_escape_string($connect, $_POST['newstore']);
+		$id = mysqli_real_escape_string($connect, $_POST['id']);
+		if (empty($id)) { array_push($errors, "ID required"); }
+		if (empty($oldauthor)) { array_push($errors, "Current store Required!"); }
+		if (empty($newauthor)) { array_push($errors, "New store Required!"); }
+		if (count($errors) == 0) {
+			$query = "UPDATE products SET author='$newauthor' WHERE id='$id'";
+			mysqli_query($connect, $query);
+			header('location: allproducts.php');
 		}
+	}
 
-
-		if (isset($_POST['del_product'])) {
-			$id = mysqli_real_escape_string($connect, $_POST['id']);
-	
-			if (empty($id)) { array_push($errors, "Product ID required"); }
-		
-	
-			if (count($errors) == 0) {
-				$query = "DELETE FROM products WHERE id='$id'";
-				mysqli_query($con, $query);
-	
-				header('location: allproducts.php');
-			}
-		
+	if (isset($_POST['invent_delete'])) {
+		$id = mysqli_real_escape_string($connect, $_POST['id']);
+		if (empty($id)) { array_push($errors, "Product ID required"); }
+		if (count($errors) == 0) {
+			$query = "DELETE FROM products WHERE id='$id'";
+			mysqli_query($con, $query);
+			header('location: inventory.php');
 		}
+	}
 
 ?>
