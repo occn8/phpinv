@@ -14,23 +14,23 @@
 	mysqli_query($connect, $use);
 	
 	$user = "CREATE TABLE IF NOT EXISTS users (
-		id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+		id INT(5) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 		username VARCHAR(30) NOT NULL,
-		email VARCHAR(50),
-		password VARCHAR(50)
+		email VARCHAR(30),
+		password VARCHAR(30)
 		)";
 		mysqli_query($connect, $user);
 
 	$pdts = "CREATE TABLE IF NOT EXISTS products (
-		id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-		title VARCHAR(50) NOT NULL,
-		author VARCHAR(100) NOT NULL,
-		edition INT(10),
-		adddate DATE
+		id INT(5) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+		pdtname VARCHAR(50) NOT NULL,
+		pdtdescription VARCHAR(255) NOT NULL,
+		pdtbarcode INT(20),
+		insertdate DATE
 		)";
 		mysqli_query($connect, $pdts);
 
-	$products = "INSERT INTO `products` (`id`, `title`, `author`, `edition`, `adddate`) VALUES
+	$products = "INSERT INTO `products` (`id`, `title`, `author`, `edition`, `insertdate`) VALUES
 	(1, 'Wrong key then', 'Debuzzy skar', 1, '2020-08-11'),
 	(2, 'Guns akimbo', 'collino antony', 2, '2020-08-11'),
 	(3, 'Bob Marley', 'Ganja planter q', 1, '2020-08-11'),
@@ -113,7 +113,7 @@
 		}
 
 		if (count($errors) == 0) {
-			$query = "INSERT INTO products (title, author, edition, adddate ) 
+			$query = "INSERT INTO products (title, author, edition, insertdate ) 
 					  VALUES('$title','$author', '$edition', NOW())";
 			mysqli_query($connect, $query);
 
@@ -122,13 +122,10 @@
 		}
 	}
 
-	$querrybooks = "SELECT * FROM products";
-	$result = $connect->query($querrybooks);
+	$querryinventory = "SELECT * FROM products";
+	$result = $connect->query($querryinventory);
 	if ($result->num_rows > 0) {
-	  
-	} else {
-	    echo "No books";
-	}
+	} else {}
 
 
 		if (isset($_POST['update_product'])) {

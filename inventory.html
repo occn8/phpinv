@@ -47,6 +47,52 @@
             example. It’s built with default Bootstrap components and utilities with little customization.</p>
     </div>
 
+    <div>
+        <tr>
+            <th>
+                <h1>Travel-Id</h1>
+            </th>
+            <th>
+                <h1>Traveler</h1>
+            </th>
+            <th>
+                <h1>Trip</h1>
+            </th>
+            <th>
+                <h1>class</h1>
+            </th>
+            <th>
+                <h1>From</h1>
+            </th>
+            <th>
+                <h1>To</h1>
+            </th>
+            <th>
+                <h1>Adults</h1>
+            </th>
+            <th>
+                <h1>Children</h1>
+            </th>
+            <th>
+                <h1>Infants</h1>
+            </th>
+        </tr>
+        <?php include('./configuration.php') ?>
+        <?php foreach($result as $inventory):?>
+        <tr>
+            <td><?php echo $inventory['travelId']; ?></td>
+            <td><?php echo $inventory['username']; ?></td>
+            <td><?php echo $inventory['trip']; ?></td>
+            <td><?php echo $inventory['class']; ?></td>
+            <td><?php echo $inventory['dport']; ?></td>
+            <td><?php echo $inventory['aport']; ?></td>
+            <td><?php echo $inventory['adults']; ?></td>
+            <td><?php echo $inventory['children']; ?></td>
+            <td><?php echo $inventory['infants']; ?></td>
+        </tr>
+        <?php endforeach; ?>
+    </div>
+
     <div class="container">
         <div class="card-deck mb-3 text-center">
 
@@ -103,7 +149,8 @@
                 </div>
             </div><br>
             <center>
-                <p>&copy; 2020 U-invent &middot; All Rights Reserved &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+                <p>&copy; 2020 U-invent &middot; All Rights Reserved &middot; <a href="#">Privacy</a> &middot; <a
+                        href="#">Terms</a></p>
             </center>
         </footer>
     </div>
