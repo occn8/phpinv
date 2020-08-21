@@ -1,4 +1,4 @@
-<?php include('configuration.php') ?>
+<?php include('configurations.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <form class="form-signin" method="post" action="login.php">
+    <form class="form-signin" method="post" action="sign_in.php">
         <?php include('errors.php'); ?>
         <center>
             <img class="mb-4" src="favicon.ico" alt="" height="100">

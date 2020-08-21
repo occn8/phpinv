@@ -1,4 +1,4 @@
-<?php include('configuration.php') ?>
+<?php include('configurations.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +15,7 @@
 
 <body>
 
-    <form method="post" action="signup.php" class="form-signin">
+    <form method="post" action="sign_up.php" class="form-signin">
         <center>
             <h1 class="h3 mb-3 font-weight-normal">Please Register</h1>
         </center>
