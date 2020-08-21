@@ -53,7 +53,7 @@
         <center>
                 <div class="">
                 <h1><b>Delete Book</b></h1>
-                <form action="deletebook.php" method="post">
+                <form action="invent_delete.php" method="post">
                 <?php include('errors.php'); ?>
                     <label for="" class="white">Enter Book Id:</label>
                     <input type="text" name="id" class="mb-3"><br>

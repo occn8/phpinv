@@ -13,7 +13,7 @@
 	mysqli_query($connect, $use);
 	
 	$user = "CREATE TABLE IF NOT EXISTS users (
-		id INT(5) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+		id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 		username VARCHAR(30) NOT NULL,
 		email VARCHAR(30),
 		password VARCHAR(30)
@@ -57,10 +57,10 @@
 					  VALUES('$username', '$email', '$password')";
 			mysqli_query($connect, $query);
 			$_SESSION['username'] = $username;
+			$_SESSION['success'] = "Welcome";
 			setcookie('user', $username, time() + (86400 * 2), "/");
 			header('location: index.php');
 		}
-
 	}
 
 

@@ -23,27 +23,27 @@
         <div class="">
 
             <div class="form-group">
-                <label for="c_fname" class="text-black">Username </label>
-                <input type="text" class="form-control" id="c_fname" name="username" placeholder="Username"
+                <label for="uname" class="text-black">Username </label>
+                <input type="text" class="form-control" id="uname" name="username" placeholder="Username"
                     value="<?php echo $username; ?>" required>
 
             </div>
 
             <div class="form-group ">
-                <label for="c_email" class="text-black">Email </label>
-                <input type="email" class="form-control" id="c_email" name="email" placeholder="Email" value=""
+                <label for="email" class="text-black">Email </label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email" value=""
                     required>
             </div>
 
             <div class="form-group">
-                <label for="c_pass" class="text-black">Password </label>
-                <input type="password" class="form-control" id="c_pass" name="password_1" placeholder="Password"
+                <label for="pass" class="text-black">Password </label>
+                <input type="password" class="form-control" id="pass" name="password_1" placeholder="Password"
                     value="" required>
             </div>
 
             <div class="form-group">
-                <label for="c_repass" class="text-black">Re-type Password </label>
-                <input type="password" class="form-control" id="c_repass" name="password_2" placeholder="Password"
+                <label for="repass" class="text-black">Re-type Password </label>
+                <input type="password" class="form-control" id="repass" name="password_2" placeholder="Password"
                     value="" required>
             </div>
 

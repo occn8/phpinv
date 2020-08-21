@@ -53,7 +53,7 @@
         <center>
                 <div class="">
                 <h1><b>Edit Book Author</b></h1>
-                <form action="update.php" method="post">
+                <form action="invent_update.php" method="post">
                 <?php include('errors.php'); ?>
                 <label for="id" class="white">Book ID</label>
                     <input type="text" name="id" id="id" class="mb-3"><br>

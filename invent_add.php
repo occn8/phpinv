@@ -50,32 +50,35 @@
 
     <div class="container">
         <div class="card-deck mb-3 text-center">
-        <form method="post" action="addbook.php" class="form-signin bg-white padd">
-        <center>
-        <h1><b>Add Book</b></h1>
-        </center>
+
+        <form method="post" action="invent_add.php" class="form-signin bg-white padd">
             <?php include('errors.php'); ?>
-            <div class="">
+            <div class="container">
                 
-                <div class="form-group">
-                        <label for="title" class="text-black">Title <span class="text-danger"></span></label>
-                        <input type="text" class="form-control" id="title" name="title" placeholder="Title" value=""required>
-                        <div class="invalid-feedback">
+                <div class="form-group ">
+                        <label for="title" class="text-black">Product Name <span class="text-danger"></span></label>
+                        <input type="textfield" class="form-control" id="title" name="pdtname" placeholder="Name" value=""required>
                 </div>
 
                 <div class="form-group ">
-                        <label for="author" class="text-black">Author <span class="text-danger"></span></label>
-                        <input type="text" class="form-control" id="author" name="author" placeholder="Author" value="" required>
+                        <label for="description" class="text-black"> Product Description <span class="text-danger"></span></label>
+                        <textarea class="form-control mb-4" id="description"  name="pdtdescription" placeholder="Description" width="600px" rows="3"></textarea>
+                        <!-- <input type="text" class="form-control" id="description" name="pdtdescription" placeholder="Description" value="" required> -->
                 </div>
 
                 <div class="form-group">
-                        <label for="edition" class="text-black">Edition <span class="text-danger"></span></label>
-                        <input type="text" class="form-control" id="edition" name="edition" placeholder="Edition" value="" required>
+                        <label for="batch" class="text-black">BatchNo <span class="text-danger"></span></label>
+                        <input type="text" class="form-control" id="batch" name="batchNo" placeholder="Batch number" value="" required>
+                </div>
+
+                <div class="form-group">
+                        <label for="store" class="text-black">Store <span class="text-danger"></span></label>
+                        <input type="text" class="form-control" id="store" name="store" placeholder="Store" value="" required>
                 </div>
 
                 <center>
                         <div class="col-lg-4">
-                            <input type="submit" class="btn btn-warning btn-block yellow" name="addbook" value="Add Book">
+                            <input type="submit" class="btn btn-warning btn-block yellow" name="invent_add" value="Add Product">
                         </div>
                 </center>
 
