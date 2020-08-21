@@ -6,10 +6,10 @@
 	$errors = array();
 	$connect = mysqli_connect('localhost', 'root', '');
 
-	$ct = "CREATE DATABASE IF NOT EXISTS inventory";
-	mysqli_query($connect, $ct);
+	$ib = "CREATE DATABASE IF NOT EXISTS inventorybase";
+	mysqli_query($connect, $ib);
 
-    $use = "USE inventory";
+    $use = "USE inventorybase";
 	mysqli_query($connect, $use);
 	
 	$user = "CREATE TABLE IF NOT EXISTS users (

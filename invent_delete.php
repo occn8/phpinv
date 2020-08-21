@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="css/animate.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="icon" href="favicon.ico">
-    <title>Update Inventory</title>
+    <title>Delete Inventory</title>
 </head>
 
 <body>
@@ -31,8 +31,8 @@
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="inventory.html">Inventory</a></li>
                     <li class="nav-item"><a class="nav-link" href="invent_add.html">Input</a></li>
-                    <li class="nav-item active"><a class="nav-link" href="#">Update</a></li>
-                    <li class="nav-item"><a class="nav-link" href="invent_delete.html">Remove</a></li>
+                    <li class="nav-item"><a class="nav-link" href="invent_update.html">Update</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="#">Remove</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
 
@@ -42,7 +42,7 @@
     </div>
 
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-        <h1 class="display-4">Update Product</h1>
+        <h1 class="display-4">Delete Inventory</h1>
         <p class="lead">Quickly build an effective pricing table for your potential customers with this Bootstrap
             example. It’s built with default Bootstrap components and utilities with little customization.</p>
     </div>
@@ -103,7 +103,8 @@
                 </div>
             </div><br>
             <center>
-                <p>&copy; 2020 U-invent &middot; All Rights Reserved &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+                <p>&copy; 2020 U-invent &middot; All Rights Reserved &middot; <a href="#">Privacy</a> &middot; <a
+                        href="#">Terms</a></p>
             </center>
         </footer>
     </div>

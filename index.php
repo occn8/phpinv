@@ -46,9 +46,9 @@
             </div>
         </nav>
     </div>
-<div style="height: 10px;" class="shadow-sm">
+    <div style="height: 10px;" class="shadow-sm">
 
-</div>
+    </div>
     <div class="jumbotron">
         <div class="container">
             <h1 class="display-3"> <span> <img class="mb-4" src="favicon.ico" alt="" height="100">

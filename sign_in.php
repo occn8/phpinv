@@ -32,7 +32,8 @@
                 <input type="checkbox" value="remember-me"> Remember me
             </label>
         </div>
-        <button class="btn btn-lg btn-warning btn-block" style="background-color: #59b8b2;" name="login_user" type="submit">Sign in</button><br>
+        <button class="btn btn-lg btn-warning btn-block" style="background-color: #59b8b2;" name="login_user"
+            type="submit">Sign in</button><br>
 
         <center>
             <small>Not A User </small> <a href="sign_up.php" style="color:red;">Sign up Now</a>

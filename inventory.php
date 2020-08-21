@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="css/animate.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="icon" href="favicon.ico">
-    <title>Delete Inventory</title>
+    <title>Inventory</title>
 </head>
 
 <body>
@@ -29,10 +29,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="inventory.html">Inventory</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="#">Inventory</a></li>
                     <li class="nav-item"><a class="nav-link" href="invent_add.html">Input</a></li>
                     <li class="nav-item"><a class="nav-link" href="invent_update.html">Update</a></li>
-                    <li class="nav-item active"><a class="nav-link" href="#">Remove</a></li>
+                    <li class="nav-item"><a class="nav-link" href="invent_delete.html">Remove</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
 
@@ -42,9 +42,43 @@
     </div>
 
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-        <h1 class="display-4">Delete Inventory</h1>
+        <h1 class="display-4">Your Inventory</h1>
         <p class="lead">Quickly build an effective pricing table for your potential customers with this Bootstrap
             example. It’s built with default Bootstrap components and utilities with little customization.</p>
+    </div>
+
+    <div>
+        <tr>
+            <th>
+                <h1>Pdt-Id</h1>
+            </th>
+            <th>
+                <h1>Pdt-Name</h1>
+            </th>
+            <th>
+                <h1>Description</h1>
+            </th>
+            <th>
+                <h1>Batch-No</h1>
+            </th>
+            <th>
+                <h1>Store</h1>
+            </th>
+            <th>
+                <h1>Insert-date</h1>
+            </th>
+        </tr>
+        <?php include('./configuration.php') ?>
+        <?php foreach($result as $inventory):?>
+        <tr>
+            <td><?php echo $inventory['id']; ?></td>
+            <td><?php echo $inventory['pdtname']; ?></td>
+            <td><?php echo $inventory['pdtdescription']; ?></td>
+            <td><?php echo $inventory['batchNo']; ?></td>
+            <td><?php echo $inventory['store']; ?></td>
+            <td><?php echo $inventory['insertdate']; ?></td>
+        </tr>
+        <?php endforeach; ?>
     </div>
 
     <div class="container">
@@ -103,7 +137,8 @@
                 </div>
             </div><br>
             <center>
-                <p>&copy; 2020 U-invent &middot; All Rights Reserved &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+                <p>&copy; 2020 U-invent &middot; All Rights Reserved &middot; <a href="#">Privacy</a> &middot; <a
+                        href="#">Terms</a></p>
             </center>
         </footer>
     </div>

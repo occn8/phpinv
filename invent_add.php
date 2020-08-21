@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="css/animate.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="icon" href="favicon.ico">
-    <title>Inventory</title>
+    <title>Add Inventory</title>
 </head>
 
 <body>
@@ -29,8 +29,8 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item active"><a class="nav-link" href="#">Inventory</a></li>
-                    <li class="nav-item"><a class="nav-link" href="invent_add.html">Input</a></li>
+                    <li class="nav-item"><a class="nav-link" href="inventory.html">Inventory</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="#">Input</a></li>
                     <li class="nav-item"><a class="nav-link" href="invent_update.html">Update</a></li>
                     <li class="nav-item"><a class="nav-link" href="invent_delete.html">Remove</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
@@ -42,55 +42,9 @@
     </div>
 
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-        <h1 class="display-4">Your Inventory</h1>
+        <h1 class="display-4">Add Inventory</h1>
         <p class="lead">Quickly build an effective pricing table for your potential customers with this Bootstrap
             example. It’s built with default Bootstrap components and utilities with little customization.</p>
-    </div>
-
-    <div>
-        <tr>
-            <th>
-                <h1>Travel-Id</h1>
-            </th>
-            <th>
-                <h1>Traveler</h1>
-            </th>
-            <th>
-                <h1>Trip</h1>
-            </th>
-            <th>
-                <h1>class</h1>
-            </th>
-            <th>
-                <h1>From</h1>
-            </th>
-            <th>
-                <h1>To</h1>
-            </th>
-            <th>
-                <h1>Adults</h1>
-            </th>
-            <th>
-                <h1>Children</h1>
-            </th>
-            <th>
-                <h1>Infants</h1>
-            </th>
-        </tr>
-        <?php include('./configuration.php') ?>
-        <?php foreach($result as $inventory):?>
-        <tr>
-            <td><?php echo $inventory['travelId']; ?></td>
-            <td><?php echo $inventory['username']; ?></td>
-            <td><?php echo $inventory['trip']; ?></td>
-            <td><?php echo $inventory['class']; ?></td>
-            <td><?php echo $inventory['dport']; ?></td>
-            <td><?php echo $inventory['aport']; ?></td>
-            <td><?php echo $inventory['adults']; ?></td>
-            <td><?php echo $inventory['children']; ?></td>
-            <td><?php echo $inventory['infants']; ?></td>
-        </tr>
-        <?php endforeach; ?>
     </div>
 
     <div class="container">
@@ -147,7 +101,8 @@
                         <li><a class="text-muted" href="#">Terms</a></li>
                     </ul>
                 </div>
-            </div><br>
+            </div>
+            <br>
             <center>
                 <p>&copy; 2020 U-invent &middot; All Rights Reserved &middot; <a href="#">Privacy</a> &middot; <a
                         href="#">Terms</a></p>

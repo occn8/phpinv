@@ -25,36 +25,37 @@
                 <label for="c_fname" class="text-black">Username </label>
                 <input type="text" class="form-control" id="c_fname" name="username" placeholder="Username"
                     value="<?php echo $username; ?>" required>
-                
-                </div>
-
-                <div class="form-group ">
-                    <label for="c_email" class="text-black">Email </label>
-                    <input type="email" class="form-control" id="c_email" name="email" placeholder="Email" value=""
-                        required>
-                </div>
-
-                <div class="form-group">
-                    <label for="c_pass" class="text-black">Password </label>
-                    <input type="password" class="form-control" id="c_pass" name="password_1" placeholder="Password"
-                        value="" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="c_repass" class="text-black">Re-type Password </label>
-                    <input type="password" class="form-control" id="c_repass" name="password_2" placeholder="Password"
-                        value="" required>
-                </div>
-
-                <center>
-                    <button class="btn btn-lg btn-warning btn-block" style="background-color: #59b8b2;" name="reg_user" type="submit">Register</button><br>
-
-                    <small>Already A User?</small> <a href="sign_in.php" style="color:red;">Log In Now</a>
-                </center>
-
-
 
             </div>
+
+            <div class="form-group ">
+                <label for="c_email" class="text-black">Email </label>
+                <input type="email" class="form-control" id="c_email" name="email" placeholder="Email" value=""
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label for="c_pass" class="text-black">Password </label>
+                <input type="password" class="form-control" id="c_pass" name="password_1" placeholder="Password"
+                    value="" required>
+            </div>
+
+            <div class="form-group">
+                <label for="c_repass" class="text-black">Re-type Password </label>
+                <input type="password" class="form-control" id="c_repass" name="password_2" placeholder="Password"
+                    value="" required>
+            </div>
+
+            <center>
+                <button class="btn btn-lg btn-warning btn-block" style="background-color: #59b8b2;" name="reg_user"
+                    type="submit">Register</button><br>
+
+                <small>Already A User?</small> <a href="sign_in.php" style="color:red;">Log In Now</a>
+            </center>
+
+
+
+        </div>
     </form>
 
     <script src="js/jquery.min.js"></script>
