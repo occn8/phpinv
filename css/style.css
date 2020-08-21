@@ -73,3 +73,16 @@ ul {
     outline: none;
     padding: 0px;
     }
+
+    .styf>p>a:hover,
+    .styf>p>a:focus,
+    .styf>p>a:active{
+      color: white !important;
+      background-color: #59b8b2 !important;
+    }
+    .styf2>button:hover,
+    .styf2>button:focus,
+    .styf2>button:active{
+      color: white !important;
+      background-color: #59b8b2 !important;
+    }

@@ -84,14 +84,14 @@
 
     <div class="container border-bottom">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 styf">
                 <img class="mb-4" src="images/round_dolly.png" alt="" height="100">
                 <h2>Warehouse Management</h2>
                 <p>Check stock level, manage inter-warehouse transfer, and generate reports for specific warehouses
                     within seconds. Warehouse inventory management, at your fingertips. </p>
                 <p><a class="btn" href="#" role="button" style="color: #59b8b2;">View details &raquo;</a></p>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 styf">
                 <img class="mb-4" src="images/round_checklist.png" alt="" height="100">
                 <h2>End-to-end tracking</h2>
                 <p>Track every item or batch in your inventory with serial number and batch tracking feature.
@@ -99,7 +99,7 @@
                     control over the expiry of each batch. </p>
                 <p><a class="btn " href="#" role="button" style="color: #59b8b2;">View details &raquo;</a></p>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 styf">
                 <img class="mb-4" src="images/round_dolly.png" alt="" height="100">
                 <h2>Multiple shipping integrations</h2>
                 <p>Get real-time shipping rates and in-transit details of major shipping carriers and choose a
@@ -120,7 +120,7 @@
                 <div class="card-header">
                     <h4 class="my-0 font-weight-normal">Free</h4>
                 </div>
-                <div class="card-body">
+                <div class="card-body styf2">
                     <h1 class="card-title pricing-card-title">0 <small class="text-muted">/ month</small></h1>
                     <ul class="list-unstyled mt-3 mb-4">
                         <li>Usage in Uganda</li>
@@ -137,7 +137,7 @@
                 <div class="card-header">
                     <h4 class="my-0 font-weight-normal">Basic</h4>
                 </div>
-                <div class="card-body">
+                <div class="card-body styf2">
                     <h1 class="card-title pricing-card-title">$5 <small class="text-muted">/ month</small></h1>
                     <ul class="list-unstyled mt-3 mb-4">
                         <li>Usage in Africa</li>
@@ -154,7 +154,7 @@
                 <div class="card-header">
                     <h4 class="my-0 font-weight-normal">Standard</h4>
                 </div>
-                <div class="card-body">
+                <div class="card-body styf2">
                     <h1 class="card-title pricing-card-title">$15 <small class="text-muted">/ month</small></h1>
                     <ul class="list-unstyled mt-3 mb-4">
                         <li>Usage Around the world</li>
@@ -172,7 +172,7 @@
                 <div class="card-header">
                     <h4 class="my-0 font-weight-normal">Professional</h4>
                 </div>
-                <div class="card-body">
+                <div class="card-body styf2">
                     <h1 class="card-title pricing-card-title">$25 <small class="text-muted">/ month</small></h1>
                     <ul class="list-unstyled mt-3 mb-4">
                         <li>Usage Around the world</li>
