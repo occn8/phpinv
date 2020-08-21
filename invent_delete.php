@@ -1,3 +1,4 @@
+<?php include('configuration.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,7 +50,17 @@
 
     <div class="container">
         <div class="card-deck mb-3 text-center">
-
+        <center>
+                <div class="">
+                <h1><b>Delete Book</b></h1>
+                <form action="deletebook.php" method="post">
+                <?php include('errors.php'); ?>
+                    <label for="" class="white">Enter Book Id:</label>
+                    <input type="text" name="id" class="mb-3"><br>
+                    <button type="submit" class="btn btn-warning col-md-4 yellow" name="deletebook">Delete Book</button>
+                </form><br>
+            </div><br>
+        </center>
         </div>
 
         <footer class="pt-4 my-md-5 pt-md-5 border-top">

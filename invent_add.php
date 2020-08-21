@@ -1,3 +1,4 @@
+<?php include('configuration.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,7 +50,39 @@
 
     <div class="container">
         <div class="card-deck mb-3 text-center">
+        <form method="post" action="addbook.php" class="form-signin bg-white padd">
+        <center>
+        <h1><b>Add Book</b></h1>
+        </center>
+            <?php include('errors.php'); ?>
+            <div class="">
+                
+                <div class="form-group">
+                        <label for="title" class="text-black">Title <span class="text-danger"></span></label>
+                        <input type="text" class="form-control" id="title" name="title" placeholder="Title" value=""required>
+                        <div class="invalid-feedback">
+                </div>
 
+                <div class="form-group ">
+                        <label for="author" class="text-black">Author <span class="text-danger"></span></label>
+                        <input type="text" class="form-control" id="author" name="author" placeholder="Author" value="" required>
+                </div>
+
+                <div class="form-group">
+                        <label for="edition" class="text-black">Edition <span class="text-danger"></span></label>
+                        <input type="text" class="form-control" id="edition" name="edition" placeholder="Edition" value="" required>
+                </div>
+
+                <center>
+                        <div class="col-lg-4">
+                            <input type="submit" class="btn btn-warning btn-block yellow" name="addbook" value="Add Book">
+                        </div>
+                </center>
+
+                
+
+            </div>
+        </form>  
         </div>
 
         <footer class="pt-4 my-md-5 pt-md-5 border-top">

@@ -1,3 +1,4 @@
+<?php include('configuration.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,7 +50,21 @@
 
     <div class="container">
         <div class="card-deck mb-3 text-center">
-
+        <center>
+                <div class="">
+                <h1><b>Edit Book Author</b></h1>
+                <form action="update.php" method="post">
+                <?php include('errors.php'); ?>
+                <label for="id" class="white">Book ID</label>
+                    <input type="text" name="id" id="id" class="mb-3"><br>
+                    <label for="author" class="white">Current Author</label>
+                    <input type="text" name="author" id="author" class="mb-3"><br>
+                    <label for="new" class="white">New Author</label>
+                    <input type="text" name="new" id="new" class="mb-3"><br>
+                    <button type="submit" class="btn btn-warning col-md-4 yellow" name="editbook">Update Author</button>
+                </form><br>
+            </div><br>
+        </center>
         </div>
 
         <footer class="pt-4 my-md-5 pt-md-5 border-top">
