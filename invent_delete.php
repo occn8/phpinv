@@ -16,7 +16,7 @@
     <div class="d-flex flex-column p-2 bg-white border-bottom shadow-sm">
         <nav class="navbar navbar-expand-md navbar-light" id="site-header">
             <div class="navbar-header">
-                <a href="index.html" class="navbar-brand">
+                <a href="index.php" class="navbar-brand">
                     <span class="fir-l">U</span><span class="scec-l">-invent</span>
                 </a>
             </div>
@@ -28,10 +28,10 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="inventory.html">Inventory</a></li>
-                    <li class="nav-item"><a class="nav-link" href="invent_add.html">Input</a></li>
-                    <li class="nav-item"><a class="nav-link" href="invent_update.html">Update</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="inventory.php">Inventory</a></li>
+                    <li class="nav-item"><a class="nav-link" href="invent_add.php">Input</a></li>
+                    <li class="nav-item"><a class="nav-link" href="invent_update.php">Update</a></li>
                     <li class="nav-item active"><a class="nav-link" href="#">Remove</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
