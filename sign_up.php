@@ -1,4 +1,5 @@
 <?php include('configurations.php') ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,7 +49,7 @@
             </div>
 
             <center>
-                <button class="btn btn-lg btn-warning btn-block" style="background-color: #59b8b2;" name="reg_user"
+                <button class="btn btn-lg btn-warning btn-block" style="background-color: #59b8b2;" name="reg"
                     type="submit">Register</button><br>
 
                 <small>Already A User?</small> <a href="sign_in.php" style="color:red;">Log In Now</a>

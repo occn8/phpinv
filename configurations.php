@@ -4,6 +4,7 @@
 	$username = "";
 	$email    = "";
 	$errors = array();
+	$_SESSION['success'] = "";
 	$connect = mysqli_connect('localhost', 'root', '');
 
 	$ib = "CREATE DATABASE IF NOT EXISTS inventorybase";
@@ -15,8 +16,8 @@
 	$user = "CREATE TABLE IF NOT EXISTS users (
 		id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 		username VARCHAR(30) NOT NULL,
-		email VARCHAR(30),
-		password VARCHAR(30)
+		email VARCHAR(50),
+		password VARCHAR(50)
 		)";
 		mysqli_query($connect, $user);
 
@@ -38,11 +39,17 @@
 	(5, 'Guns', 'Already the Best inventory management software products', 122, 'Store-3', '2020-08-18'),
 	(6, 'Bugatti', 'the Best inventory management software products', 223, 'Store-3', '2020-08-20'),
 	(7, 'pane knife', 'Best inventory management software products', 455, 'Store-4', '2020-08-20'),
-	(8, 'Book 60one', 'Among the Best inventory management software products', 445, 'Store-4', '2020-08-20')";
+	(8, 'Book 60one', 'Among the Best inventory management software products', 445, 'Store-4', '2020-08-20'),
+	(9, 'Razor blade', 'Best inventory management software products', 677, 'Store-2', '2020-07-21'),
+	(10, 'Andro laptop', 'Named among the Best inventory management software products', 787, 'Store-3', '2020-08-18'),
+	(11, 'Toy Guns', 'Already the Best inventory management software products', 677, 'Store-5', '2020-08-18'),
+	(12, 'Pants pair', 'the Best inventory management software products', 980, 'Store-5', '2020-08-21'),
+	(13, 'Violine sp', 'Best inventory management software products', 876, 'Store-4', '2020-08-21'),
+	(14, 'Trumpet', 'Among the Best inventory management software products', 456, 'Store-6', '2020-08-21')";
 	mysqli_query($connect, $products);
 
 
-	if (isset($_POST['reg_user'])) {
+	if (isset($_POST['reg'])) {
 		$username = mysqli_real_escape_string($connect, $_POST['username']);
 		$email = mysqli_real_escape_string($connect, $_POST['email']);
 		$pass1 = mysqli_real_escape_string($connect, $_POST['password_1']);
