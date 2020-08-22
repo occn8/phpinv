@@ -50,36 +50,36 @@
     </div>
 
     <div class="container">
-        <div class="card-deck mb-3 text-center">
+        <div class="mb-3 text-center">
 
         <form method="post" action="invent_add.php" class="form-signin bg-white padd">
             <?php include('errors.php'); ?>
             <div class="container">
                 
                 <div class="form-group ">
-                        <label for="title" class="text-black">Product Name <span class="text-danger"></span></label>
+                        <label for="title" class="text-black"><b>Product Name</b> <span class="text-danger"></span></label>
                         <input type="textfield" class="form-control" id="title" name="pdtname" placeholder="Name" value=""required>
                 </div>
 
                 <div class="form-group ">
-                        <label for="description" class="text-black"> Product Description <span class="text-danger"></span></label>
+                        <label for="description" class="text-black"> <b>Product Description</b> <span class="text-danger"></span></label>
                         <textarea class="form-control mb-4" id="description"  name="pdtdescription" placeholder="Description" width="600px" rows="3"></textarea>
                         <!-- <input type="text" class="form-control" id="description" name="pdtdescription" placeholder="Description" value="" required> -->
                 </div>
 
                 <div class="form-group">
-                        <label for="batch" class="text-black">BatchNo <span class="text-danger"></span></label>
+                        <label for="batch" class="text-black"><b>BatchNo</b> <span class="text-danger"></span></label>
                         <input type="text" class="form-control" id="batch" name="batchNo" placeholder="Batch number" value="" required>
                 </div>
 
                 <div class="form-group">
-                        <label for="store" class="text-black">Store <span class="text-danger"></span></label>
+                        <label for="store" class="text-black"><b>Store</b> <span class="text-danger"></span></label>
                         <input type="text" class="form-control" id="store" name="store" placeholder="Store" value="" required>
                 </div>
 
                 <center>
                         <div class="col-lg-4">
-                            <input type="submit" class="btn btn-warning btn-block yellow" name="invent_add" value="Add Product">
+                            <input type="submit" class="btn btn-warning btn-block yellow" style="background-color: #59b8b2;" name="invent_add" value="Add Product">
                         </div>
                 </center>
 

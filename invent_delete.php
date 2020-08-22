@@ -50,13 +50,13 @@
     </div>
 
     <div class="container">
-        <div class="card-deck mb-3 text-center">
+        <div class="mb-3 text-center">
         <center>
                 <form action="invent_delete.php" method="post">
                 <?php include('errors.php'); ?>
-                    <label for="" class="white">Enter Product Id </label>
-                    <input type="text" name="id" class="mb-3"><br>
-                    <button type="submit" class="btn btn-warning col-md-4 yellow" name="invent_delete">Delete Product</button>
+                    <label for="" class="white"><b>Enter Product Id</b> </label>
+                    <input type="text" name="id" class="mb-3"><br><br>
+                    <button type="submit" class="btn btn-warning col-md-4 yellow" style="background-color: #59b8b2;" name="invent_delete">Delete Product</button>
                 </form><br><br>
         </center>
         </div>
