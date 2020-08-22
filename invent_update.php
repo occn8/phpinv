@@ -55,12 +55,13 @@
                
                 <form action="invent_update.php" method="post">
                 <?php include('errors.php'); ?>
-                <label for="id" class="white"><b>Product ID<b/></label>
-                    <input type="text" name="id" id="id" class="mb-3"><br>
+                
+                    <label for="id" class="white"><b>Product ID</b></label>
+                    <input type="text" name="id" id="id" class="mb-3 form-control"><br>
                     <label for="old" class="white"><b>Current Store</b></label>
-                    <input type="text" name="currentstore" id="old" class="mb-3"><br>
-                    <label for="new" class="white"><b>New Store<b/></label>
-                    <input type="text" name="newstore" id="new" class="mb-3"><br>
+                    <input type="text" name="currentstore" id="old" class="mb-3 form-control"><br>
+                    <label for="new" class="white"><b>New Store</b></label>
+                    <input type="text" name="newstore" id="new" class="mb-3 form-control"><br>
                     <button type="submit" class="btn btn-warning col-md-4" style="background-color: #59b8b2;" name="invent_update"><b>Update Product</b></button>
                 </form><br>
            <br>
