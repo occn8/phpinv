@@ -51,15 +51,12 @@
     <div class="container">
         <div class="card-deck mb-3 text-center">
         <center>
-                <div class="">
-                <h1><b>Delete Book</b></h1>
                 <form action="invent_delete.php" method="post">
                 <?php include('errors.php'); ?>
-                    <label for="" class="white">Enter Book Id:</label>
+                    <label for="" class="white">Enter Product Id </label>
                     <input type="text" name="id" class="mb-3"><br>
-                    <button type="submit" class="btn btn-warning col-md-4 yellow" name="deletebook">Delete Book</button>
-                </form><br>
-            </div><br>
+                    <button type="submit" class="btn btn-warning col-md-4 yellow" name="invent_delete">Delete Product</button>
+                </form><br><br>
         </center>
         </div>
 

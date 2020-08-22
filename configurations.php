@@ -129,7 +129,7 @@
 		if (empty($id)) { array_push($errors, "Product ID required"); }
 		if (count($errors) == 0) {
 			$query = "DELETE FROM products WHERE id='$id'";
-			mysqli_query($con, $query);
+			mysqli_query($connect, $query);
 			header('location: inventory.php');
 		}
 	}
