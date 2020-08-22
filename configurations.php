@@ -115,12 +115,12 @@
 		$newstore = mysqli_real_escape_string($connect, $_POST['newstore']);
 		$id = mysqli_real_escape_string($connect, $_POST['id']);
 		if (empty($id)) { array_push($errors, "ID required"); }
-		if (empty($oldauthor)) { array_push($errors, "Current store Required!"); }
-		if (empty($newauthor)) { array_push($errors, "New store Required!"); }
+		if (empty($oldstore)) { array_push($errors, "Current store Required!"); }
+		if (empty($newstore)) { array_push($errors, "New store Required!"); }
 		if (count($errors) == 0) {
-			$query = "UPDATE products SET author='$newauthor' WHERE id='$id'";
+			$query = "UPDATE products SET store='$newstore' WHERE id='$id'";
 			mysqli_query($connect, $query);
-			header('location: allproducts.php');
+			header('location: inventory.php');
 		}
 	}
 

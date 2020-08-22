@@ -50,21 +50,20 @@
 
     <div class="container">
         <div class="card-deck mb-3 text-center">
-        <center>
-                <div class="">
-                <h1><b>Edit Book Author</b></h1>
+        <!-- <center> -->
+               
                 <form action="invent_update.php" method="post">
                 <?php include('errors.php'); ?>
-                <label for="id" class="white">Book ID</label>
+                <label for="id" class="white">Product ID</label>
                     <input type="text" name="id" id="id" class="mb-3"><br>
-                    <label for="author" class="white">Current Author</label>
-                    <input type="text" name="author" id="author" class="mb-3"><br>
-                    <label for="new" class="white">New Author</label>
-                    <input type="text" name="new" id="new" class="mb-3"><br>
-                    <button type="submit" class="btn btn-warning col-md-4 yellow" name="editbook">Update Author</button>
+                    <label for="old" class="white">Current Store</label>
+                    <input type="text" name="currentstore" id="old" class="mb-3"><br>
+                    <label for="new" class="white">New Store</label>
+                    <input type="text" name="newstore" id="new" class="mb-3"><br>
+                    <button type="submit" class="btn btn-warning col-md-4" name="invent_update">Update Product</button>
                 </form><br>
-            </div><br>
-        </center>
+           <br>
+        <!-- </center> -->
         </div>
 
         <footer class="pt-4 my-md-5 pt-md-5 border-top">
