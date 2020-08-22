@@ -78,6 +78,12 @@
         </div>
     </div>
 
+    <div class="pricing-header px-3 py-3 pt-md-2 pb-md-4 mx-auto text-center">
+        <p class="lead">U-invent is a suite of open source business apps that cover all your company needs: CRM, eCommerce, 
+            accounting, inventory, point of sale, project management, etc.
+            U-invent's unique value proposition is to be at the same time very easy to use and fully integrated.</p>
+    </div>
+
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
         <h1 class="display-4 primary">Run a more efficient business</h1>
     </div>
