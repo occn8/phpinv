@@ -51,14 +51,19 @@
 
     <div class="container">
         <div class="mb-3 text-center">
-        <center>
+        <!-- <center> -->
                 <form action="invent_delete.php" method="post">
                 <?php include('errors.php'); ?>
-                    <label for="" class="white"><b>Enter Product Id</b> </label>
-                    <input type="text" name="id" class="mb-3"><br><br>
+                <div class="container">
+                <div class="form-group ">
+                    <label for="id" class="white"><b>Enter Product Id</b> </label>
+                    <input type="text" name="id" id="id" class="mb-3 form-control"><br>
+                </div>
+
                     <button type="submit" class="btn btn-warning col-md-4 yellow" style="background-color: #59b8b2;" name="invent_delete">Delete Product</button>
+                 </div>
                 </form><br><br>
-        </center>
+        <!-- </center> -->
         </div>
 
         <footer class="pt-4 my-md-5 pt-md-5 border-top">
