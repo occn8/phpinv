@@ -75,15 +75,8 @@
                 <div class="form-group">
                         <label for="store" class="text-black"><b>Store</b> <span class="text-danger"></span></label>
                         <input type="text" class="form-control" id="store" name="store" placeholder="Store" value="" required>
-                </div>
-
-                <center>
-                        <div class="col-lg-4">
-                            <input type="submit" class="btn btn-warning btn-block yellow" style="background-color: #59b8b2;" name="invent_add" value="Add Product">
-                        </div>
-                </center>
-
-                
+                </div><br>
+                <button type="submit" class="btn btn-warning col-md-4 yellow" style="background-color: #59b8b2;" name="invent_add"><b>Add Product</b></button>       
 
             </div>
         </form>  

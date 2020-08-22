@@ -60,7 +60,7 @@
                     <input type="text" name="id" id="id" class="mb-3 form-control"><br>
                 </div>
 
-                    <button type="submit" class="btn btn-warning col-md-4 yellow" style="background-color: #59b8b2;" name="invent_delete">Delete Product</button>
+                    <button type="submit" class="btn btn-warning col-md-4 yellow" style="background-color: #59b8b2;" name="invent_delete"><b>Delete Product</b></button>
                  </div>
                 </form><br><br>
         <!-- </center> -->

@@ -65,8 +65,8 @@
     <div style="height: 10px;" class="shadow-sm">
 
     </div>
-    <div class="jumbotron">
-        <div class="container">
+    <div class="jumbotron" style="background:url(images/bg.jpg) no-repeat; background-size: cover; ">
+        <div class="container p-md-2" style="background-color:rgba(255, 255, 255, 0.788);" >
             <h1 class="display-3"> <span> <img class="mb-4" src="favicon.ico" alt="" height="100">
                 </span> <span class="fir-l" style="font-size: larger;">U</span><span class="scec-l"
                     style="font-size: larger;">-invent</span></h1>
@@ -74,7 +74,7 @@
             <p style="font-size: large;">Increase your sales and keep track of every unit with our powerful stock
                 management, order fulfillment, and inventory control software. </p>
 
-            <p><a class="btn btn-outline-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+            <p><a class="btn btn-outline-primary btn-lg" href="#" style="background-color: #59b8b2; color:black;" role="button">Learn more &raquo;</a></p>
         </div>
     </div>
 
