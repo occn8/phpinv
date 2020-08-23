@@ -70,7 +70,7 @@
                 <h2>Insert_date</h2>
             </th>
         </tr>
-        <?php include('configurations.php') ?>
+        <?php include('../config/configurations.php') ?>
         <?php foreach($result as $inventory):?>
         <tr>
             <td><?php echo $inventory['id']; ?></td>
